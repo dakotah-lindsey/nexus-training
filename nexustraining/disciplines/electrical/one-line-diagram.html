@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electrical One Line</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/diagram.css">
+  <link rel="stylesheet" href="/styles/headerR.css">
+</head>
+<body>
+  <div id="main-wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="header-logo">
+        <a href="/homepage.html" id="logo-link">
+          <img src="/images/NEXUS-Logo-Rev-2024.png" alt="Logo">
+        </a>
+      </div>
+
+      <div class="zoom-controls">
+        <button id="reset-zoom">Reset</button>
+      </div>
+    </header>
+
+    <!-- Diagram Container -->
+    <div id="diagram-container">
+      <div id="diagram-inner">
+        <img src="/drawings/AOP Training_LV_MV_1-Line.png" alt="Electrical One Line Drawing">
+
+        <!-- Symbol Buttons -->
+        <button class="symbol-btn" data-symbol="Test 1" style="top: 17%; left: 32.5%; height: 4%; width: 4%;">Test 1</button>
+        <button class="symbol-btn" data-symbol="Test 2" style="top: 14%; left: 49.5%; height: 3%; width: 7%;">Test 2</button>
+        <button class="symbol-btn" data-symbol="Test 3" style="top: 18%; left: 84%; height: 4%; width: 5%;">Test 3</button>
+        <button class="symbol-btn" data-symbol="Test 4" style="top: 23.5%; left: 20.1%; height: 3%; width: 4%;">Test 4</button>
+        <button class="symbol-btn" data-symbol="Test 5" style="top: 25.4%; left: 29.5%; height: 2.5%; width: 6%;">Test 5</button>
+        <button class="symbol-btn" data-symbol="Test 6" style="top: 42%; left: 29%;">Test 6</button>
+        <button class="symbol-btn" data-symbol="Test 7" style="top: 46.5%; left: 47%; height: 5%; width: 3%;">Test 7</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Info Bar -->
+  <div id="info-bar">
+    <span id="info-text">Click a symbol to see details.</span>
+  </div>
+
+  <script>
+    // Set the correct discipline for the logo link
+    const disciplineName = 'electrical'; // replace dynamically in generate-pages.js
+    const logoLink = document.getElementById('logo-link');
+    logoLink.onclick = function() {
+      localStorage.setItem('selectedDiscipline', disciplineName);
+      localStorage.setItem('menuPanel', 3);
+    };
+  </script>
+
+  <script src="/scripts/diagram.js"></script>
+</body>
+</html>
