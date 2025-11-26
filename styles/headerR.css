@@ -1,0 +1,50 @@
+header { 
+  position: relative;
+  display: flex;
+  align-items: center;         /* vertically center content */
+  justify-content: flex-start; /* align items to the left */
+  height: 80px;                /* consistent height */
+  padding: 0 20px;             /* horizontal padding */
+  background-color: #c11624;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  color: white;
+
+  /* Floating effect */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+/* Pseudo-element to prevent white background showing under lift */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #c11624;
+}
+
+header:hover {
+  transform: translateY(3px); /* drop down instead of lift */
+  box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+}
+
+.header-logo img {
+  height: 60px;  /* fits nicely inside the header */
+  width: auto;
+  display: block;
+}
+
+/* Keep nav/zoom buttons on top right */
+.nav-buttons, .zoom-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-buttons { right: 10px; }
+.zoom-controls { right: 80px; } /* adjust as needed */
